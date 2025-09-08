@@ -10,7 +10,7 @@ env:
   IMAGE_SHA: ${{ secrets.DOCKERHUB_USERNAME }}/frontend-service:${{ github.sha }}
   IMAGE_LATEST: ${{ secrets.DOCKERHUB_USERNAME }}/frontend-service:latest
   GITOPS_REPO: Tracel-web-project/Travel-gitOps
-  GITOPS_DEPLOYMENT_PATH: base/frontend-service
+  GITOPS_DEPLOYMENT_PATH: apps/dev/frontend
   GITOPS_BRANCH_PREFIX: ci/update-frontend-service
 
 jobs:
