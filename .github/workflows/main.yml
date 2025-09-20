@@ -29,7 +29,6 @@ jobs:
 
       # Lint frontend code
       - name: Lint code
-        working-directory: ./frontend-service
         run: npm run lint || true
 
 
