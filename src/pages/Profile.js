@@ -8,23 +8,16 @@ export default function Login() {
   const [message, setMessage] = useState('');
   const [loggedInUser, setLoggedInUser] = useState('');
 
-  const handleLogin = async () => {
-    try {
-      const res = await loginUser({ email, password });
-      if (res.data.message) {
-        // New user registered
-        setMessage(res.data.message);
-        setLoggedInUser(res.data.name || email); // show name if available
-      } else {
-        // Existing user logged in
-        setMessage('Logged in successfully');
-        setLoggedInUser(res.data.name);
-      }
-    } catch (err) {
-      console.error(err);
-      alert(err.response?.data?.error || 'Login failed.');
-    }
-  };
+const handleLogin = async () => {
+  try {
+    const res = await loginUser({ email, password });
+    setMessage(res.data.message); // Shows either "Logged in" or "Registered"
+    setLoggedInUser(res.data.name || email); // Fallback if name is null
+  } catch (err) {
+    console.error(err);
+    alert(err.response?.data?.error || 'Login failed.');
+  }
+};
 
   if (loggedInUser) {
     return (
