@@ -21,15 +21,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install dependencies
+        working-directory: ./frontend-service
+        run: npm install
+
       - name: Lint code
-        run: |
-          npm install
-          npm run lint
-                
+        working-directory: ./frontend-service
+        run: npm run lint
+
       - name: Run Unit Tests
-        run: |
-          npm install
-          npm test || true
+        working-directory: ./frontend-service
+        run: npm test || true
+
           
       - name: SAST with CodeQL
         uses: github/codeql-action/init@v3
