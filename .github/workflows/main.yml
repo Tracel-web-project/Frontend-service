@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  SERVICE: ./frontend-service
+  SERVICE: frontend-service
   IMAGE_SHA: ${{ secrets.DOCKERHUB_USERNAME }}/frontend-service:${{ github.sha }}
   IMAGE_LATEST: ${{ secrets.DOCKERHUB_USERNAME }}/frontend-service:latest
   GITOPS_REPO: Tracel-web-project/Travel-gitOps
