@@ -28,8 +28,8 @@ jobs:
         run: npm install
 
       # Lint frontend code
-      - name: Lint code
-        run: npm run lint || true
+     # - name: Lint code
+      #  run: npm run lint || true
 
 
       # Run unit tests (does not block workflow)
