@@ -29,7 +29,6 @@ export default function Holidays() {
     alert(`You selected ${holiday.name}!`);
   };
 
-  // Add handleBook function
   const handleBook = async (holiday) => {
     try {
       const res = await fetch("http://holidays-service:5002/book", {
@@ -72,14 +71,16 @@ export default function Holidays() {
         ))}
       </Grid>
 
-      //feedback 
-      {/* feedback */}
-    <Snackbar open={snackbar.open} autoHideDuration={3000} onClose={() => setSnackbar({ ...snackbar, open: false })}>
-       <Alert severity={snackbar.severity} sx={{ width: "100%" }}>
-        {snackbar.message}
-       </Alert>
-    </Snackbar>
-
+      {/* Feedback Snackbar */}
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={3000}
+        onClose={() => setSnackbar({ ...snackbar, open: false })}
+      >
+        <Alert severity={snackbar.severity} sx={{ width: "100%" }}>
+          {snackbar.message}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }
