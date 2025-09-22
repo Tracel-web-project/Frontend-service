@@ -73,11 +73,13 @@ export default function Holidays() {
       </Grid>
 
       //feedback 
-      <Snackbar open={snackbar.open} autoHideDuration={3000} onClose={() => setSnackbar({ ...snackbar, open: false })}>
-        <Alert severity={snackbar.severity} sx={{ width: "100%" }}>
-          {snackbar.message}
-        </Alert>
-      </Snackbar>
+      {/* feedback */}
+    <Snackbar open={snackbar.open} autoHideDuration={3000} onClose={() => setSnackbar({ ...snackbar, open: false })}>
+       <Alert severity={snackbar.severity} sx={{ width: "100%" }}>
+        {snackbar.message}
+       </Alert>
+    </Snackbar>
+
     </Box>
   );
 }
