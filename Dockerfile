@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install exact deps based on package-lock.json
-RUN npm ci
+RUN npm install
 
 # Copy rest of the source code
 COPY . .
