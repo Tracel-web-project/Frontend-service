@@ -7,6 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies (clean reproducible install)
+RUN npm install -g npm@11.6.0
 RUN npm ci
 
 # Copy rest of the project
